@@ -190,11 +190,11 @@ a {
     opacity: 0; /* Teks menghilang */
 }
 .bridge {
-    width: 250px; /* Lebar perosotan, sesuaikan sesuai kebutuhan */
-    height: 700px; /* Tinggi perosotan */
+    width: 300px; /* Lebar perosotan, sesuaikan sesuai kebutuhan */
+    height: 800px; /* Tinggi perosotan */
     background: radial-gradient(circle, #00f, #00aaff 60%, rgba(0, 0, 0, 0) 100%); /* Gradient memudar */
     position: absolute;
-    top: -40px; /* Tambahkan unit px */
+    top: -55px; /* Tambahkan unit px */
     left: 40%;
     transform: translateX(-50%) rotate(-45deg); /* Sesuaikan transformasi */
     clip-path: ellipse(50% 50% at 50% 50%); /* Membuat bentuk melingkar */
@@ -202,17 +202,81 @@ a {
 }
 .bridge2 {
     width: 200px; /* Lebar perosotan, sesuaikan sesuai kebutuhan */
-    height: 300px; /* Tinggi perosotan */
-    background: radial-gradient(circle, rgb(0, 32, 177), #00e1ff 35%, rgb(0, 0, 0) 100%); /* Gradient memudar */
+    height: 200px; /* Tinggi perosotan */
+    background: radial-gradient(circle, #8a2be2, #00e1ff 40%, rgba(0, 0, 0, 0.89) 100%); /* Gradient memudar lebih lembut */
     position: absolute;
     top: 60px; /* Tambahkan unit px */
     left: 75%;
-    transform: translateX(-50%) rotate(-45deg); /* Sesuaikan transformasi */
-    clip-path: ellipse(50% 50% at 50% 50%); /* Membuat bentuk melingkar */
     z-index: 150;
+    transform: translateX(-50%) rotate(-45deg); /* Sesuaikan transformasi */
+    clip-path: polygon(
+        50% 0%, 
+        61% 38%, 
+        98% 38%, 
+        68% 59%, 
+        79% 91%, 
+        50% 70%, 
+        21% 91%, 
+        32% 59%, 
+        2% 38%, 
+        39% 38%
+    ); /* Membuat bentuk bintang yang lebih halus */
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.8)); /* Efek glow putih dengan filter */
 }
-.profile-photo.hover .bridge2 {
-    z-index: 50;
+.bridge3 {
+    width: 400px; /* Lebar perosotan, sesuaikan sesuai kebutuhan */
+    height: 420px; /* Tinggi perosotan */
+    background: radial-gradient(circle, #28ffdb, #7700ff 40%, rgba(0, 0, 0, 0.89) 100%); /* Gradient memudar lebih lembut */
+    position: absolute;
+    top: 20px; /* Tambahkan unit px */
+    left: 46.5%;
+    z-index: 110;
+    transform: translateX(-50%) rotate(-45deg); /* Sesuaikan transformasi */
+    clip-path: polygon(
+        50% 0%, 
+        61% 38%, 
+        98% 38%, 
+        68% 59%, 
+        79% 91%, 
+        50% 70%, 
+        21% 91%, 
+        32% 59%, 
+        2% 38%, 
+        39% 38%
+    ); /* Membuat bentuk bintang yang lebih halus */
+    filter: drop-shadow(0 0 20px rgb(0, 0, 0)); /* Efek glow putih dengan filter */
+}
+.bridge4 {
+    width: 400px; /* Lebar perosotan, sesuaikan sesuai kebutuhan */
+    height: 420px; /* Tinggi perosotan */
+    background: radial-gradient(circle, #28ffdb, #7700ff 40%, rgba(0, 0, 0, 0.89) 100%); /* Gradient memudar lebih lembut */
+    position: absolute;
+    top: 300px; /* Tambahkan unit px */
+    left: 80%;
+    z-index: 110;
+    transform: translateX(-50%) rotate(-45deg); /* Sesuaikan transformasi */
+    clip-path: polygon(
+        50% 0%, 
+        61% 38%, 
+        98% 38%, 
+        68% 59%, 
+        79% 91%, 
+        50% 70%, 
+        21% 91%, 
+        32% 59%, 
+        2% 38%, 
+        39% 38%
+    ); /* Membuat bentuk bintang yang lebih halus */
+    filter: drop-shadow(0 0 20px rgb(0, 0, 0)); 
+    animation: rotateStar 10s linear infinite;
+}
+@keyframes rotateStar {
+    from {
+        transform: translateX(-50%) rotate(0deg);
+    }
+    to {
+        transform: translateX(-50%) rotate(360deg);
+    }
 }
 #home {
     display: flex;
@@ -247,7 +311,7 @@ a {
     position: relative;
     overflow: hidden; /* Ensure the photo stays within the bounds of its container */
     perspective: 1000px; /* Adds depth to the 3D effect */
-    z-index: 100;
+    z-index: 130;
     
 }
 .border-container {
@@ -355,8 +419,8 @@ a {
 .social-media{
     display: flex;
     margin-left: 45px;
-    margin-top: 50px;
-    gap: 20px;
+    margin-top: 70px;
+    gap: 20px; 
 }
 
 .social-media img {
@@ -369,6 +433,7 @@ a {
     transition: all 0.7s ease;
 }
 .social-media img:hover{
+    z-index: 120;
     scale: 1.2;
     transform: translateY(-10px);
     transition: all 0.7s ease;
@@ -379,26 +444,7 @@ a {
     
     margin: 0 5px;
 }
-@media (max-width: 768px) {
-    #home {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
 
-    .profile-photo {
-        top: 100px;
-        margin: 0;
-    }
-
-    #profile-info {
-        max-width: 100%;
-    }
-
-    .social-media {
-        margin-left: 0;
-    }
-}
 #about {
     display: flex;
     flex-direction: column;
@@ -425,25 +471,107 @@ a {
     max-width: 600px; /* Atur lebar maksimal teks */
 }
 
-@media (max-width: 768px) {
-    .about-content {
+@media (min-width: 921px) and (max-width: 1200px) {
+    .button-container.right {
+        margin-right: 10px;
+    }
+    .button-container {
+        display: flexbox;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        background: rgb(0, 140, 255);
+        box-shadow: 0 0 25px rgb(0,140,255);
+    }
+  }
+@media (min-width: 601px) and (max-width: 921px) {
+    .button-container {
+        display: grid;
+        padding: 5px;
+        background: rgb(0, 140, 255);
+        box-shadow: 0 0 25px rgb(0,140,255);
+        }
+    .button-container.right {
+        margin-right: 10px;
+    }
+    #home {
         flex-direction: column;
+        align-items: center;
         text-align: center;
     }
 
-    .about-content img {
-        margin-bottom: 20px;
+    .profile-photo {
+        top: 90px;
+        left: -5%;
+        margin: 0;
+    }
+    .profile-photo img{
+        width: 350px;
+        height: 380px;
+    }
+    #profile-info {
+        max-width: 100%;
+    }
+
+    .bridge3 {
+        top: 280px;
+        left: 10%;
+    }
+    .bridge2 {
+        top: 5px;
+    }
+    .bridge4 {
+        top: 600px;
     }
 }
-
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 600px) {
     .button-container {
     display: grid;
     padding: 5px;
     background: rgb(0, 140, 255);
     box-shadow: 0 0 25px rgb(0,140,255);
     }
+    .button-container.right {
+        display: none;
+    }
     .button a{
         font-size: 12px;
+    }
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .bridge2 {
+        top: 5px;
+    }
+    .about-content img {
+        margin-bottom: 20px;
+    }
+    #home {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .profile-photo {
+        top: 90px;
+        left: -5%;
+        margin: 0;
+    }
+    .profile-photo img{
+        width: 350px;
+        height: 380px;
+    }
+    #profile-info {
+        max-width: 100%;
+    }
+
+    .bridge3 {
+        top: 280px;
+        left: 10%;
+    }
+
+    .bridge4 {
+        top: 600px;
     }
 }

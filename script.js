@@ -1,7 +1,7 @@
 AOS.init();
 
 document.addEventListener('DOMContentLoaded', function() {
-    const roles = ["Web Developer", "Software Engineer", "Freelancer", "Designer"];
+    const roles = ["Web Developer", "Web Designer", "Freelancer", "UI/UX Designer"];
     let currentIndex = 0;
     const swipeTextElement = document.getElementById('swipe-text');
 
@@ -31,9 +31,11 @@ photo.addEventListener('mousemove', (e) => {
     const angleX = (deltaY / centerY) * 10; // Adjust sensitivity
     const angleY = (deltaX / centerX) * -10; // Adjust sensitivity
 
-    photo.querySelector('img').style.transform = `rotateX(${angleX}deg) rotateY(${angleY}deg) scale(1.05)`;
+    photo.querySelector('img').style.transform = `rotateX(${angleX}deg) rotateY(${angleY}deg) scale(1)`;
+    photo.classList.add('hover')
 });
 
 photo.addEventListener('mouseleave', () => {
     photo.querySelector('img').style.transform = 'rotateX(0) rotateY(0) scale(1)';
+    photo.classList.remove('hover')
 });

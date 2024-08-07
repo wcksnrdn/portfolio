@@ -1,0 +1,449 @@
+body {
+    font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+    background-color: #000000; /* Background hitam */
+    color: #fff; /* Teks putih */
+    overflow-x: hidden;
+}
+/* CSS untuk mengubah gaya teks yang sedang diseleksi */
+::selection {
+    color: rgb(0, 211, 200); /* Warna teks saat diseleksi */
+}
+
+::-webkit-scrollbar {
+    width: 5px; /* Lebar scroll bar */
+}
+
+/* Untuk scroll bar horizontal */
+::-webkit-scrollbar {
+    height: 3px; /* Tinggi scroll bar */
+}
+
+/* Penyesuaian warna dan gaya scroll bar (opsional) */
+::-webkit-scrollbar-thumb {
+    background-color: #b9b1ff; /* Warna scroll bar */
+    border-radius: 5px; /* Bentuk border scroll bar */
+}
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    z-index: 1000;
+}
+
+.button-container {
+    display: flex;
+    font-family: 'montserrat';
+    gap: 10px;
+    padding: 5px;
+    border-radius: 15px;
+    background: rgb(0,140,255);
+    box-shadow: 0 0 25px rgb(0,140,255);
+    transition: all 0.5s;
+    
+}
+
+.button-container.left {
+    background-color: rgba(0, 0, 0, 0);
+    box-shadow: 2px 2px 12px 2px rgba(0, 0, 0, 0);
+    margin-left: 20px;
+}
+
+/* Gaya default untuk teks */
+.button-container.left h1 {
+    font-size: 14px;  
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    transition: transform 0.5s ease; /* Transisi untuk animasi shake */
+}
+
+.button-container.right {
+    margin-right: 50px;
+    font-family: 'montserrat';
+}
+
+.button-container:hover {
+    transition: all 0.5s;
+}
+
+.button {
+    outline: 0 !important;
+    border: 0 !important;
+    width: auto;
+    height: 40px;
+    border-radius: 10px;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    transition: all ease-in-out 0.3s;
+    cursor: pointer;
+    padding: 0 20px;
+    
+}
+
+.button:hover {
+    transform: translateY(-3px);
+}
+.button a:hover {
+    transition: all 0.5s ease;
+    color: rgb(180, 255, 251); /* Warna teks saat di-hover */
+    text-shadow: 0 0 8px rgba(180, 255, 251, 0.8), 0 0 15px rgba(180, 255, 251, 0.6); /* Efek glow pada teks */
+}
+/* Menambahkan animasi garis bawah dengan efek cahaya */
+.button a::after {
+    content: ''; /* Konten kosong untuk pseudo-elemen */
+    position: absolute; /* Posisi absolut untuk garis bawah */
+    left: 0;
+    bottom: -5px; /* Menempatkan garis bawah sedikit di bawah teks */
+    width: 100%; /* Lebar garis bawah sama dengan lebar teks */
+    height: 2px; /* Ketebalan garis bawah */
+    background-color: rgb(255, 255, 255); /* Warna garis bawah */
+    transform: scaleX(0); /* Mulai dengan garis bawah tidak terlihat */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animasi garis bawah dan efek cahaya */
+    box-shadow: 0 0 0 rgb(255, 255, 255); /* Efek cahaya default */
+}
+
+/* Menampilkan garis bawah dan efek cahaya saat di-hover */
+.button a:hover::after {
+    transform: scaleX(1); /* Mengubah garis bawah menjadi terlihat */
+    box-shadow: 0 -5px 20px rgb(255, 255, 255); /* Efek cahaya lebih terang */
+}
+.button a {
+    font-family: 'montserrat';
+    text-decoration: none;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+section {
+    padding: 6rem 2rem;
+    text-align: center;
+}
+
+.project {
+    background-color: #111; /* Warna hitam lebih terang */
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid #0f0; /* Border neon hijau */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.7); /* Shadow neon hijau */
+}
+
+.project a {
+    color: #0f0; /* Neon hijau */
+    text-decoration: none;
+}
+
+.project a:hover {
+    color: #ff00ff; /* Neon ungu */
+}
+
+footer {
+    background-color: #333; /* Warna abu-abu gelap */
+    color: #0f0; /* Neon hijau */
+    text-align: center;
+    padding: 1rem 0;
+    width: 100%;
+    bottom: 0;
+}
+.highlight {
+    color: blue; /* Set the color for the "I am" part */
+}
+h1, h2, h3 {
+    color: rgb(36, 36, 36);
+    font-family: 'montserrat';
+}
+
+a {
+    color: #0f0; /* Neon hijau */
+}
+.text-glow {
+    font-size: 24px; /* Sesuaikan ukuran font sesuai kebutuhan */
+    color: #002970; /* Warna biru untuk teks */
+    text-shadow: 
+        0 0 5px rgb(97, 97, 255), /* Shadow biru terang */
+        0 0 10px rgb(86, 89, 248), /* Shadow biru terang */
+        0 0 15px rgb(121, 121, 253), /* Shadow biru terang */
+        0 0 20px rgb(0, 255, 234), /* Shadow biru terang */
+        0 0 25px rgb(56, 56, 255), /* Shadow biru terang */
+        0 0 30px rgb(0, 217, 255), /* Shadow biru terang */
+        0 0 35px rgb(57, 57, 255); /* Shadow biru terang */
+    transition: opacity 0.5s ease-in-out; /* Transisi halus untuk efek muncul/tenggelam */
+}
+
+.text-glow.visible {
+    opacity: 1; /* Teks terlihat */
+}
+
+.text-glow:not(.visible) {
+    opacity: 0; /* Teks menghilang */
+}
+.bridge {
+    width: 250px; /* Lebar perosotan, sesuaikan sesuai kebutuhan */
+    height: 700px; /* Tinggi perosotan */
+    background: radial-gradient(circle, #00f, #00aaff 60%, rgba(0, 0, 0, 0) 100%); /* Gradient memudar */
+    position: absolute;
+    top: -40px; /* Tambahkan unit px */
+    left: 40%;
+    transform: translateX(-50%) rotate(-45deg); /* Sesuaikan transformasi */
+    clip-path: ellipse(50% 50% at 50% 50%); /* Membuat bentuk melingkar */
+    z-index: 50;
+}
+.bridge2 {
+    width: 200px; /* Lebar perosotan, sesuaikan sesuai kebutuhan */
+    height: 300px; /* Tinggi perosotan */
+    background: radial-gradient(circle, rgb(0, 32, 177), #00e1ff 35%, rgb(0, 0, 0) 100%); /* Gradient memudar */
+    position: absolute;
+    top: 60px; /* Tambahkan unit px */
+    left: 75%;
+    transform: translateX(-50%) rotate(-45deg); /* Sesuaikan transformasi */
+    clip-path: ellipse(50% 50% at 50% 50%); /* Membuat bentuk melingkar */
+    z-index: 150;
+}
+.profile-photo.hover .bridge2 {
+    z-index: 50;
+}
+#home {
+    display: flex;
+    margin-top: 76px; /* Adjust this value to move the section further down */
+}
+#profile-info {
+    box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.562);
+    position: relative; /* Needed for the pseudo-element */
+    background-color: white;
+    border-radius: 40px;
+    padding: 20px;
+    margin-top: -60px;
+    z-index: 100;
+    height: 350px;
+    overflow: hidden; /* Ensure the pseudo-element doesn't overflow */
+}
+#profile-info::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px; /* Adjust height for wave effect */
+    background: #616161;
+    border-radius: 50% 50% 0 0; /* Creates the wave effect */
+    box-shadow: 0 -10px 0 0 rgb(0, 110, 255); /* Creates the illusion of waves */
+}
+.profile-photo {
+    margin-left: 100px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    overflow: hidden; /* Ensure the photo stays within the bounds of its container */
+    perspective: 1000px; /* Adds depth to the 3D effect */
+    z-index: 100;
+    
+}
+.border-container {
+    padding: 20px; /* Space between the photo and the border */
+    border: 5px solid rgb(255, 255, 255); /* The border around the photo */
+    border-radius: 40%; /* Rounded border */
+    transition: all 0.5s ease; /* Smooth transition for hover effects */
+    position: relative; /* Positioning context for the photo */
+    z-index: 20;
+}
+
+.profile-photo img {
+    margin-top: -20px;
+    width: 400px; /* Adjust the width of the photo */
+    height: 400px; /* Adjust the height of the photo */
+    border-radius: 35%; /* Adjust the border-radius of the photo */
+    object-fit: cover; /* Ensures the image covers the given width and height without stretching */
+    position: relative; /* Ensure it is above the pseudo-element */
+    transition: transform 0.2s ease, box-shadow 0.5s ease, filter 0.5s ease; /* Smooth transition for transform property */
+    will-change: transform; /* Hint to the browser that transform will change */
+    transform-style: preserve-3d; /* Preserve 3D transformation effects */
+    box-shadow: 0px 0px 0px 0px rgba(0, 47, 255, 0);
+    filter: hue-rotate(0deg); /* Initial color filter */
+    border: 10px solid rgb(255, 255, 255); /* Adding border */
+}
+
+.profile-photo img:hover {
+    box-shadow: 2px 0px 20px 5px rgba(0, 47, 255, 0.596);
+    filter: hue-rotate(360deg); /* Color change on hover */
+}
+.profile-photo.hover .border-container {
+    border-color: rgba(141, 141, 141, 0);
+}
+/* Additional styling for the container for more visual effect */
+.profile-photo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(0, 47, 255, 0.1), rgba(0, 47, 255, 0));
+    border-radius: 35%;
+    transition: all 0.5s ease;
+}
+
+.profile-photo:hover::before {
+    background: linear-gradient(45deg, rgba(0, 47, 255, 0.2), rgba(0, 47, 255, 0.1));
+}
+
+/* Adding a glitch effect */
+.profile-photo img::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    border-radius: 35%;
+    opacity: 0.5;
+    filter: contrast(1.5);
+    transform: translate(-5px, 5px);
+    clip: rect(10px, 190px, 150px, 0);
+    animation: glitch 0.5s infinite;
+}
+
+@keyframes glitch {
+    0% {
+        clip: rect(10px, 190px, 150px, 0);
+        transform: translate(-5px, 5px);
+    }
+    20% {
+        clip: rect(130px, 200px, 180px, 0);
+        transform: translate(5px, -5px);
+    }
+    40% {
+        clip: rect(50px, 150px, 200px, 0);
+        transform: translate(-5px, 0px);
+    }
+    60% {
+        clip: rect(80px, 170px, 130px, 0);
+        transform: translate(5px, 5px);
+    }
+    80% {
+        clip: rect(40px, 200px, 160px, 0);
+        transform: translate(-5px, -5px);
+    }
+    100% {
+        clip: rect(70px, 190px, 110px, 0);
+        transform: translate(0px, 5px);
+    }
+}
+
+
+.swipe-text {
+    display: inline-block;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+.visible {
+    opacity: 1;
+}
+
+.social-media{
+    display: flex;
+    margin-left: 45px;
+    margin-top: 50px;
+    gap: 20px;
+}
+
+.social-media img {
+    width: 50px !important;
+    height: 50px !important;
+    object-fit: cover;
+    scale: 1;
+    transform: translateY(0);
+    filter: drop-shadow(0px 0px 0px rgba(0, 0, 0, 0));
+    transition: all 0.7s ease;
+}
+.social-media img:hover{
+    scale: 1.2;
+    transform: translateY(-10px);
+    transition: all 0.7s ease;
+    filter: drop-shadow(0px 15px 5px rgba(0, 0, 0, 0.658));
+}
+
+.social-media a {
+    
+    margin: 0 5px;
+}
+@media (max-width: 768px) {
+    #home {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .profile-photo {
+        top: 100px;
+        margin: 0;
+    }
+
+    #profile-info {
+        max-width: 100%;
+    }
+
+    .social-media {
+        margin-left: 0;
+    }
+}
+#about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    gap: 20px; /* Jarak antara foto dan teks */
+    margin-top: 20px;
+}
+
+.about-content img {
+    width: 150px; /* Atur ukuran foto sesuai kebutuhan */
+    height: auto;
+    border-radius: 50%; /* Jika ingin foto berbentuk lingkaran */
+}
+
+.about-content p {
+    max-width: 600px; /* Atur lebar maksimal teks */
+}
+
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-content img {
+        margin-bottom: 20px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .button-container {
+    display: grid;
+    padding: 5px;
+    background: rgb(0, 140, 255);
+    box-shadow: 0 0 25px rgb(0,140,255);
+    }
+    .button a{
+        font-size: 12px;
+    }
+}

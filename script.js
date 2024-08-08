@@ -1,4 +1,31 @@
-AOS.init();
+
+
+AOS.init()
+
+function disableAOSForMobile() {
+    const minScreenWidth = 300;
+    const maxScreenWidth = 500;
+    const currentScreenWidth = window.innerWidth;
+
+    if (currentScreenWidth >= minScreenWidth && currentScreenWidth <= maxScreenWidth) {
+        // Nonaktifkan AOS
+        AOS.init({
+            disable: true
+        });
+    } else {
+        // Aktifkan AOS
+        AOS.init({
+            disable: false
+        });
+    }
+}
+
+// Jalankan fungsi saat halaman dimuat
+window.addEventListener('load', disableAOSForMobile);
+
+// Jalankan fungsi saat ukuran layar diubah
+window.addEventListener('resize', disableAOSForMobile);
+
 
 document.addEventListener('DOMContentLoaded', function() {
     const roles = ["Web Developer", "Web Designer", "Freelancer", "UI/UX Designer"];
@@ -38,4 +65,22 @@ photo.addEventListener('mousemove', (e) => {
 photo.addEventListener('mouseleave', () => {
     photo.querySelector('img').style.transform = 'rotateX(0) rotateY(0) scale(1)';
     photo.classList.remove('hover')
+});
+
+document.querySelector('.hamburger-menu').addEventListener('click', function() {
+    const bars = document.querySelectorAll('.bar');
+    const stars = document.querySelectorAll('.star');
+    bars.forEach(bar => {
+        bar.classList.toggle('hidden');
+    });
+    stars.forEach(star => {
+        star.classList.toggle('blue-neon');
+    });
+    
+    const buttonContainer = document.querySelector('.button-container.right');
+    if (buttonContainer.style.right === '-20px') {
+        buttonContainer.style.right = '-200px';
+    } else {
+        buttonContainer.style.right = '-20px';
+    }
 });

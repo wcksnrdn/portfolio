@@ -9,6 +9,11 @@ body {
     background-color: #000000; /* Background hitam */
     color: #fff; /* Teks putih */
     overflow-x: hidden;
+    cursor: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MDAiIGhlaWdodD0iNTAwIj4KICA8Y2lyY2xlIGN4PSI3MjAiIGN5PSI3MjAiIHI9IjI1MCIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIi8+Cjwvc3ZnPg==') 25 25, auto;
+}
+/* Kursor lingkaran putih saat menyentuh teks */
+a, button, input, textarea {
+    cursor: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MDAiIGhlaWdodD0iNTAwIj4KICA8Y2lyY2xlIGN4PSI3MjAiIGN5PSI3MjAiIHI9IjI1MCIgZmlsbD0id2hpdGUiIHN0cm9rZS13aWR0aD0iMSIvPjwvc3ZnPg==') 25 25, auto;
 }
 /* CSS untuk mengubah gaya teks yang sedang diseleksi */
 ::selection {
@@ -131,32 +136,6 @@ section {
     text-align: center;
 }
 
-.project {
-    background-color: #111; /* Warna hitam lebih terang */
-    margin: 1rem;
-    padding: 1rem;
-    border: 1px solid #0f0; /* Border neon hijau */
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 255, 0, 0.7); /* Shadow neon hijau */
-}
-
-.project a {
-    color: #0f0; /* Neon hijau */
-    text-decoration: none;
-}
-
-.project a:hover {
-    color: #ff00ff; /* Neon ungu */
-}
-
-footer {
-    background-color: #333; /* Warna abu-abu gelap */
-    color: #0f0; /* Neon hijau */
-    text-align: center;
-    padding: 1rem 0;
-    width: 100%;
-    bottom: 0;
-}
 .highlight {
     color: blue; /* Set the color for the "I am" part */
 }
@@ -226,7 +205,7 @@ a {
 .bridge3 {
     width: 400px; /* Lebar perosotan, sesuaikan sesuai kebutuhan */
     height: 420px; /* Tinggi perosotan */
-    background: radial-gradient(circle, #28ffdb, #7700ff 40%, rgba(0, 0, 0, 0.89) 100%); /* Gradient memudar lebih lembut */
+    background: radial-gradient(circle, #8a2be2, #00e1ff 40%, rgba(0, 0, 0, 0.89) 100%); /* Gradient memudar lebih lembut */
     position: absolute;
     top: 20px; /* Tambahkan unit px */
     left: 46.5%;
@@ -249,7 +228,7 @@ a {
 .bridge4 {
     width: 400px; /* Lebar perosotan, sesuaikan sesuai kebutuhan */
     height: 420px; /* Tinggi perosotan */
-    background: radial-gradient(circle, #28ffdb, #7700ff 40%, rgba(0, 0, 0, 0.89) 100%); /* Gradient memudar lebih lembut */
+    background: radial-gradient(circle, #8a2be2, #00e1ff 40%, rgba(0, 0, 0, 0.89) 100%); /* Gradient memudar lebih lembut */
     position: absolute;
     top: 300px; /* Tambahkan unit px */
     left: 80%;
@@ -491,8 +470,12 @@ a {
         background: rgb(0, 140, 255);
         box-shadow: 0 0 25px rgb(0,140,255);
         }
+        .hamburger-menu {
+            display: none;
+        }
     .button-container.right {
-        margin-right: 10px;
+        right: 0;
+        position: fixed;
     }
     #home {
         flex-direction: column;
@@ -516,24 +499,98 @@ a {
     .bridge3 {
         top: 280px;
         left: 10%;
+        
     }
     .bridge2 {
         top: 5px;
     }
     .bridge4 {
         top: 600px;
+        animation: none;
+    }
+}
+@media (min-width: 300px) and (max-width: 500px){
+    .button-container {
+        display: grid;
+        padding: 5px;
+        background: rgb(0, 140, 255);
+        box-shadow: 0 0 25px rgb(0,140,255);
+        }
+        .button-container.right {
+            display: grid;
+            position: absolute;
+            right: -200px;
+            margin-top: 40px;
+        }
+        .button-container.right .hamburger-menu.active {
+            right: 0;
+        }
+        .social-media img:hover {
+            z-index: auto;
+            scale: 1;
+            transform: none;
+            transition: none;
+            filter: none;
+        }
+    .bridge2{
+        width: 100px;
+        height: 100px;
+    }
+    .bridge3{
+        width: 350px;
+        height: 350px;
+        top: 120px !important;
+        left: -2px !important;
+    }
+    .bridge{
+        left: -10px;
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+    }
+    .bridge4 {
+        width: 100px;
+        height: 100px;
+        animation: none;
+    }
+    .profile-photo img{
+        top: 10px;
+        width: 200px !important;
+        height: 230px !important;
+        border: solid 3px white;
+    }
+    .button-container.left {
+        left: 30px;
+        position: fixed;
+    }
+    .button-container.left h1 {
+        font-size: 12px;
+    }
+    #profile-info{
+        height: 340px;
+        width: 240px;
+    }
+    #home {
+        margin-top: 40px;
+    }
+    .social-media {
+        margin-left: 13px;
+    }
+    .hamburger-menu {
+        position: fixed; /* atau absolute, tergantung kebutuhan */
+        top: 0;
+        right: 0;
+        margin: 10px;
+        display: flex !important;
+        flex-direction: column;
+        cursor: pointer;
+        width: 35px; /* Added width */
+        height: 35px; /* Added height */
+        align-items: center;
+        justify-content: center;
     }
 }
 @media only screen and (max-width: 600px) {
-    .button-container {
-    display: grid;
-    padding: 5px;
-    background: rgb(0, 140, 255);
-    box-shadow: 0 0 25px rgb(0,140,255);
-    }
-    .button-container.right {
-        display: none;
-    }
     .button a{
         font-size: 12px;
     }
@@ -574,4 +631,34 @@ a {
     .bridge4 {
         top: 600px;
     }
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+.star {
+    fill: white;
+    width: 25px;
+    height: 25px;
+    margin: 4px 0;
+    margin-top: -30px;
+    transition: fill 0.4s, transform 0.4s;
+    transform: scale(0); /* Hidden initially */
+}
+
+.star.blue-neon {
+    fill: rgb(0, 238, 255);
+    filter: drop-shadow(0 0 10px blue) drop-shadow(0 0 20px blue) drop-shadow(0 0 30px blue) drop-shadow(0 0 40px blue);
+    transform: scale(1); /* Visible when toggled */
+}
+
+.bar.hidden {
+    transform: scale(0); /* Hidden when toggled */
+}
+.hamburger-menu {
+    display: none;
 }

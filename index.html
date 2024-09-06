@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/loaders/GLTFLoader.js"></script>
 </head>
 <body>
     <div class="hamburger-menu">
@@ -48,6 +50,7 @@
         <div class="bridge"></div>
         <div class="bridge3"></div>
         <div class="bridge2"></div>
+        <div class="doll1"></div>
         <div class="bridge4"></div>
         <div class="profile-photo">
             <div class="border-container">
@@ -56,13 +59,30 @@
         </div>
     </section>
     <section id="about">
-        <h2 data-aos="fade-right">About Me</h2>
+        <h2>About Me</h2>
         <div class="about-content">
-            <img src="path/to/your-photo.jpg" alt="Foto Saya" data-aos="fade-right">
-            <p data-aos="fade-left">Halo! Saya [Nama Kamu], seorang programmer yang berdedikasi untuk menciptakan solusi kreatif melalui kode. Saya memiliki pengalaman dalam [teknologi/keahlian kamu].</p>
+            <img src="pic/fotoardan2.jpg" alt="Foto Saya" data-aos="fade-right">
+            <div class="cloud-background" data-aos="fade-right"></div>
+            <div class="cloud-background2" data-aos="fade-right"></div>
+            <p data-aos="fade-left">
+                <span style="font-weight: bold; color: #7bdaff; font-size: 40px; text-shadow: 0 0 5px #00000070, 0 0 10px #7bdaff, 0 0 15px #ffffff, 0 0 20px #47ffc2, 0 0 25px #00b7ff;">Hello!</span>
+                My name is <span style="font-weight: bold; font-size: 19px;">Satria Ardan Wicaksono</span>, an IT student at 
+                <span style="font-size: 20px; color: rgb(48, 214, 255); font-weight: bold;">STMIK Mercusuar</span> 
+                with a strong focus on developing my skills in information technology. As a passionate beginner, I am 
+                dedicated to continuous learning and innovation. I have started building a solid foundation in various 
+                technologies and programming languages, and I am committed to expanding my knowledge in this field. 
+                I firmly believe that through hard work and dedication, I can make meaningful contributions to the tech industry.
+            </p>            
+            
+            <a href="pdf/Curriculum Vitae - Satria Ardan Wicaksono.pdf" download="Curriculum Vitae - Satria Ardan Wicaksono.pdf">
+                <button data-aos="fade-down" class="aboutme-button" type="button">
+                    <span class="aboutme-button__text">Download CV</span>
+                    <span class="aboutme-button__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 35" id="bdd05811-e15d-428c-bb53-8661459f9307" data-name="Layer 2" class="svg"><path d="M17.5,22.131a1.249,1.249,0,0,1-1.25-1.25V2.187a1.25,1.25,0,0,1,2.5,0V20.881A1.25,1.25,0,0,1,17.5,22.131Z"></path><path d="M17.5,22.693a3.189,3.189,0,0,1-2.262-.936L8.487,15.006a1.249,1.249,0,0,1,1.767-1.767l6.751,6.751a.7.7,0,0,0,.99,0l6.751-6.751a1.25,1.25,0,0,1,1.768,1.767l-6.752,6.751A3.191,3.191,0,0,1,17.5,22.693Z"></path><path d="M31.436,34.063H3.564A3.318,3.318,0,0,1,.25,30.749V22.011a1.25,1.25,0,0,1,2.5,0v8.738a.815.815,0,0,0,.814.814H31.436a.815.815,0,0,0,.814-.814V22.011a1.25,1.25,0,1,1,2.5,0v8.738A3.318,3.318,0,0,1,31.436,34.063Z"></path></svg></span>
+                </button>
+            </a>
         </div>
-    </section>    
-    
+    </section>       
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="script.js"></script>
 </body>

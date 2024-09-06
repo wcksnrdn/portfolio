@@ -100,6 +100,7 @@ header {
     transform: translateY(-3px);
 }
 .button a:hover {
+    cursor: pointer;
     transition: all 0.5s ease;
     color: rgb(180, 255, 251); /* Warna teks saat di-hover */
     text-shadow: 0 0 8px rgba(180, 255, 251, 0.8), 0 0 15px rgba(180, 255, 251, 0.6); /* Efek glow pada teks */
@@ -430,24 +431,91 @@ a {
     align-items: center;
     text-align: center;
     padding: 20px;
+    z-index: 100 !important;
 }
 
 .about-content {
+    position: relative;
     display: flex;
     align-items: center;
+    left: 200px;
     text-align: left;
-    gap: 20px; /* Jarak antara foto dan teks */
+    gap: 100px; /* Jarak antara foto dan teks */
     margin-top: 20px;
+    z-index: 0;
 }
 
 .about-content img {
-    width: 150px; /* Atur ukuran foto sesuai kebutuhan */
-    height: auto;
-    border-radius: 50%; /* Jika ingin foto berbentuk lingkaran */
+    width: 350px; /* Atur ukuran foto sesuai kebutuhan */
+    height: 450px;
+    z-index: 50;
+    object-fit: cover;
+    border-radius: 35%;
+    border: solid 5px white;
 }
 
 .about-content p {
-    max-width: 600px; /* Atur lebar maksimal teks */
+    line-height: 1.6;
+    letter-spacing: 1px;
+    width: 600px; 
+    padding: 10px;
+    font-weight: 500;
+    border-radius: 20px;
+    font-family: 'montserrat';
+    color: rgb(34, 132, 223);
+    font-size: 15px;
+    margin-top: -100px !important;
+    z-index: 30 !important;
+    background-clip: padding-box;
+    border-radius: 20px;
+    box-shadow: 2px 20px 20px 5px rgba(0, 0, 0, 0.397);
+}
+
+.cloud-background {
+    position: absolute;
+    top: -150px; /* Adjust as needed */
+    left: -20px; /* Adjust as needed */
+    height: 600px; /* Adjust height to make it shorter */
+    width: 1200px; /* Larger width for horizontal shape */
+    background-color: rgb(255, 255, 255);
+    clip-path: path('M150 300 C100 100, 300 50, 450 150 C600 250, 700 50, 850 200 C1000 350, 1100 150, 1200 300 C1300 450, 1100 600, 900 500 C700 400, 500 550, 350 450 C200 350, 150 400, 150 300 Z');
+    z-index: 10;
+    pointer-events: none; /* Ensures it does not capture clicks */
+}
+
+.cloud-background2 {
+    position: absolute;
+    top: -150px; /* Adjust as needed */
+    left: -200px; /* Adjust as needed */
+    height: 600px; /* Adjust height to make it shorter */
+    width: 1200px; /* Larger width for horizontal shape */
+    background: radial-gradient(circle, rgb(0, 0, 207), #00aaff 60%, rgba(0, 0, 0, 0) 100%); /* Gradient memudar */
+    clip-path: path('M100 300 C150 50, 400 0, 600 150 C800 300, 900 100, 1100 200 C1300 300, 1200 500, 1000 450 C800 400, 700 600, 500 550 C300 500, 200 400, 100 300 Z');
+    z-index: 1;
+    pointer-events: none; /* Ensures it does not capture clicks */
+}
+
+#about h2 {
+    color: white;
+    font-size: 30px;
+    position: relative;
+    padding-bottom: 5px;
+    transition: all 2s ease-in-out;
+}
+
+#about h2::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background-color: #7bdaff;
+    bottom: 0;
+    left: 0;
+    transition: width 2s ease-in-out;
+}
+
+#about h2.underline::after {
+    width: 100%;
 }
 
 @media (min-width: 921px) and (max-width: 1200px) {
@@ -516,21 +584,21 @@ a {
         background: rgb(0, 140, 255);
         box-shadow: 0 0 25px rgb(0,140,255);
         }
-        .button-container.right {
-            display: grid;
-            position: absolute;
-            right: -200px;
-            margin-top: 40px;
+    .button-container.right {
+        display: grid;
+        position: absolute;
+        right: -200px;
+        margin-top: 40px;
         }
-        .button-container.right .hamburger-menu.active {
-            right: 0;
+    .button-container.right .hamburger-menu.active {
+        right: 0;
         }
-        .social-media img:hover {
-            z-index: auto;
-            scale: 1;
-            transform: none;
-            transition: none;
-            filter: none;
+    .social-media img:hover {
+        z-index: auto;
+        scale: 1;
+        transform: none;
+        transition: none;
+        filter: none;
         }
     .bridge2{
         width: 100px;
@@ -577,18 +645,46 @@ a {
         margin-left: 13px;
     }
     .hamburger-menu {
-        position: fixed; /* atau absolute, tergantung kebutuhan */
+        position: fixed; 
         top: 0;
-        right: 0;
+        right: 20px;
         margin: 15px;
         display: flex !important;
         flex-direction: column;
         cursor: pointer;
-        width: 35px; /* Added width */
-        height: 35px; /* Added height */
+        width: 35px; 
+        height: 35px; 
         align-items: center;
         justify-content: center;
-        z-index: 1000; /* Ensure it's above other elements */
+        z-index: 1000;
+    }
+    .cloud-background2{
+        width: 700px;
+        height: 500px;
+        left: -350px;
+    }
+    .about-content img{
+        left: -50px;
+        width: 250px;
+        height: 250px;
+    }
+    .about-content {
+        top: 100px;
+        left: -25px;
+    }
+    .about-content p{
+        font-size: 8px;
+        width: 250px;
+        background-color: rgba(0, 0, 0, 0.945);
+        box-shadow: 2px 2px 15px 2px rgba(255, 255, 255, 0.274);
+    }
+    .cloud-background{
+        left: -175px;
+        max-width: 540px;
+    }
+    .aboutme-button {
+        top: -102px !important;
+        left: 50px !important;
     }
 }
 @media only screen and (max-width: 600px) {
@@ -666,3 +762,74 @@ a {
 .hamburger-menu {
     display: none;
 }
+.aboutme-button {
+    position: relative;
+    width: 170px;
+    top: 110px;
+    left: -300px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ffffff;
+    background-color: #0059ff;
+    overflow: hidden;
+    border-radius: 10px;
+    z-index: 10;
+  }
+  
+  .aboutme-button, .aboutme-button__icon, .aboutme-button__text {
+    transition: all 0.3s;
+  }
+  
+  .aboutme-button .aboutme-button__text {
+    transform: translateX(22px);
+    color: #fff;
+    font-weight: 600;
+    align-items: start;
+    justify-content: start;
+    font-size: 13px;
+    text-decoration: none;
+    font-family: 'montserrat';
+  }
+  
+  .aboutme-button .aboutme-button__icon {
+    position: absolute;
+    transform: translateX(109px);
+    height: 100%;
+    left: 20px;
+    width: 39px;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .aboutme-button .svg {
+    width: 20px;
+    fill: #0400ff;
+  }
+  
+  .aboutme-button:hover {
+    background: #ffffff;
+    box-shadow: 0px 2px 15px 5px aquamarine;
+    transition:all 0.8s ease;
+  }
+  
+  .aboutme-button:hover .aboutme-button__text {
+    color: transparent;
+  }
+  
+  .aboutme-button:hover .aboutme-button__icon {
+    width: 148px;
+    transform: translateX(0);
+  }
+  
+  .aboutme-button:active .aboutme-button__icon {
+    background-color: #ffffff;
+  }
+  
+  .aboutme-button:active {
+    border: 1px solid #ffffff;
+  }
+  

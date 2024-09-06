@@ -28,7 +28,7 @@ window.addEventListener('resize', disableAOSForMobile);
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    const roles = ["Web Developer", "Web Designer", "Freelancer", "UI/UX Designer"];
+    const roles = ["Web Developer", "Web Designer", "Frontend Dev", "UI/UX Designer"];
     let currentIndex = 0;
     const swipeTextElement = document.getElementById('swipe-text');
 
@@ -83,4 +83,22 @@ document.querySelector('.hamburger-menu').addEventListener('click', function() {
     } else {
         buttonContainer.style.right = '-20px';
     }
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    const aboutH2 = document.querySelector('#about h2');
+
+    function handleScroll() {
+        const aboutPosition = aboutH2.getBoundingClientRect();
+        const screenHeight = window.innerHeight;
+
+        if (aboutPosition.top >= 0 && aboutPosition.bottom <= screenHeight) {
+            aboutH2.classList.add('underline');
+        } else {
+            aboutH2.classList.remove('underline');
+        }
+    }
+
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleScroll);  // Optional, in case of window resizing
 });
